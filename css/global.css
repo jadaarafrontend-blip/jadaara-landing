@@ -8,33 +8,30 @@
     src: url("../fonts/Cairo-Bold.ttf");
 }
 
-
 :root {
-    --main-color: #E5483C;
-    --second-color: ;
-    --bg-color: #FDF0EE;
+    --main-color: #e5483c;
+    --second-color:#f3c9c4 ;
+    --bg-color: #fdf0ee;
     --white-color: #fff;
     --black-color: #000;
-    --main-color: #00B2F8;
-    --text-color: #2B2F3A;
+    --text-color: #2b2f3a;
     --second-text-color: #555555;
 }
-
 
 ::selection {
     background-color: var(--main-color);
     color: var(--white-color);
 }
 
+body {
+    font-family: "font_regular";
+}
 
 
 .main-container {
     width: 90%;
     margin: 0 auto;
 }
-
-
-
 
 * {
     padding: 0;
@@ -43,6 +40,7 @@
     outline: none;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    
 }
 
 *:focus {
@@ -72,3 +70,36 @@ button {
 *:focus {
     outline: none;
 }
+
+
+p{
+    margin: 0;
+}
+
+.main-btn {
+    
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #e53a3e 0%, #ef5739 100%);
+    border-radius: 24px ;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.sec-btn {
+    padding: 10px 24px;
+    background: var(--white-color);
+    border-radius: 24px;
+    border: 1px var(--main-color) solid;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
