@@ -1,0 +1,604 @@
+
+
+/* ===== Dashboard ===== */
+.dash-section {
+    padding: 72px 0
+}
+
+.dash-frame {
+    margin-top: 40px;
+    background: var(--bg-color);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 24px
+}
+
+.dash-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    background: #fff;
+    border-radius: 32px;
+    padding: 24px 10px
+}
+
+.dash-side {
+    flex: 0 0 300px;
+    min-height: 641px;
+    border: 2px solid var(--border);
+    border-radius: 24px;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.side-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.side-head h3 {
+    font-size: 20px;
+    font-weight: 700
+}
+
+.side-head-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--text-color)
+}
+
+.side-label {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 14px
+}
+
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+.side-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .2s, border-color .2s, color .2s
+}
+
+.side-menu .ic {
+    color: var(--gray);
+    flex-shrink: 0;
+    transition: color .2s
+}
+
+.side-menu li:hover {
+    background: #FBF8F7
+}
+
+.side-menu li.active {
+    background: var(--bg-color);
+    border-color: var(--main-color);
+    color: var(--main-color);
+    font-weight: 600
+}
+
+.side-menu li.active .ic {
+    color: var(--main-color)
+}
+
+.dash-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px
+}
+
+.stat {
+    min-height: 151px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    --c: var(--main-color);
+    --c-bg: var(--bg-color)
+}
+
+.stat--main-color {
+    border-color: var(--main-color)
+}
+
+.stat--blue {
+    border-color: var(--blue);
+    --c: var(--blue);
+    --c-bg: #EAF2F9
+}
+
+.stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.stat-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--c-bg);
+    color: var(--c)
+}
+
+.stat-icon svg {
+    width: 16px;
+    height: 15px
+}
+
+.stat-badge {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--c);
+    border: 1px solid var(--c);
+    border-radius: 99px;
+    padding: 4px 8px
+}
+
+.stat-val {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--c);
+    text-align: right
+}
+
+.stat--gray .stat-val {
+    color: var(--text-color)
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--gray)
+}
+
+.chart-card {
+    flex: 1;
+    padding: 8px 16px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.chart-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px
+}
+
+.chart-head h3 {
+    font-size: 22px;
+    font-weight: 700
+}
+
+.chart-head p {
+    font-size: 14px;
+    color: var(--gray);
+    margin-top: 6px
+}
+
+.legend {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: var(--gray)
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%
+}
+
+.dot--main-color {
+    background: var(--main-color)
+}
+
+.dot--blue {
+    background: var(--blue)
+}
+
+.chart {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible
+}
+
+.chart .grid line {
+    stroke: #E6E6E6;
+    stroke-width: 1;
+    stroke-dasharray: 6 6
+}
+
+.chart .axis text {
+    font-family: inherit;
+    font-size: 14px;
+    fill: var(--gray)
+}
+
+.chart .line {
+    fill: none;
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1
+}
+
+.chart .line--main-color {
+    stroke: var(--main-color)
+}
+
+.chart .line--blue {
+    stroke: var(--blue)
+}
+
+.chart .area {
+    opacity: 0
+}
+
+.chart.in-view .line {
+    transition: stroke-dashoffset 1.4s cubic-bezier(.65, 0, .35, 1);
+    stroke-dashoffset: 0
+}
+
+.chart.in-view .area {
+    transition: opacity .8s ease .9s;
+    opacity: 1
+}
+
+/* ===== FAQ ===== */
+.faq-section {
+    position: relative;
+    padding: 72px 0;
+    overflow: hidden
+}
+
+.faq-wrap {
+    position: relative;
+    z-index: 1
+}
+
+.faq-deco,
+.faq-deco::after {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px dotted #F2D4CF;
+    pointer-events: none
+}
+
+.faq-deco {
+    width: 220px;
+    height: 220px;
+    left: -90px;
+    top: 52%
+}
+
+.faq-deco::after {
+    content: "";
+    width: 150px;
+    height: 150px;
+    left: -20px;
+    top: 120px
+}
+
+.faq-list {
+    max-width: 1090px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+}
+
+.faq-item {
+    background: #fff;
+    border: 2px solid var(--border-2);
+    border-radius: 24px;
+    transition: border-color .25s
+}
+
+.faq-q {
+    width: 100%;
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 20px 0 32px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 24px;
+}
+
+/* stop the project's global button styles from overriding the FAQ */
+.faq-q,
+.faq-q:hover,
+.faq-q:focus,
+.faq-q:active{
+  background:transparent;
+  box-shadow:none;
+}
+.faq-q:focus{
+    border-bottom: 1px solid #ECE7E6
+}
+.faq-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--bg-color);
+    color: var(--main-color);
+    transition: background .25s, color .25s
+}
+
+.faq-text {
+    flex: 1;
+    transition: color .25s
+}
+
+.faq-chev {
+    width: 20px;
+    height: 20px;
+    color: var(--main-color);
+    flex-shrink: 0;
+    transition: transform .3s
+}
+
+.faq-a {
+    interpolate-size: allow-keywords
+}
+
+.faq-a>div {
+    overflow: hidden;
+    height: 0;
+    transition: height .35s ease
+}
+
+.faq-a p {
+    padding: 10px 64px 0px 32px;
+    font-size: 14px;
+    line-height: 2;
+    color: var(--gray)
+}
+
+
+.faq-item.is-open {
+    border: 1px solid var(--main-color);
+    margin: 1px
+}
+
+.faq-item.is-open .faq-num {
+    background: var(--main-color);
+    color: #fff
+}
+
+.faq-item.is-open .faq-text {
+    color: var(--main-color)
+}
+
+.faq-item.is-open .faq-chev {
+    transform: rotate(180deg)
+}
+
+.faq-item.is-open .faq-a>div {
+    height: auto
+}
+
+/* fallback for browsers without interpolate-size (Firefox / Safari) */
+@supports not (interpolate-size: allow-keywords) {
+    .faq-a>div {
+        height: auto;
+        max-height: 0;
+        transition: max-height .35s ease
+    }
+
+    .faq-item.is-open .faq-a>div {
+        max-height: 1000px
+    }
+}
+
+.faq-q:focus-visible {
+    outline: 2px solid var(--main-color);
+    outline-offset: -2px;
+    border-radius: 24px
+}
+
+/* ===== Footer ===== */
+.footer {
+    position: relative;
+    color: #fff;
+    padding: 130px 0 0;
+    background: radial-gradient(ellipse 60% 70% at 18% 10%, rgba(250, 160, 135, .55), transparent 70%), linear-gradient(180deg, #EC5F4E 0%, #DA3D31 100%)
+}
+
+.footer-wave {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    display: block
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 40px
+}
+
+/* column ratios 1.15 / 1 / 1.2 / 1 (was grid-template-columns: 1.15fr 1fr 1.2fr 1fr) */
+.footer-grid>* {
+    flex: 1 1 0
+}
+
+.footer-grid>:nth-child(1) {
+    flex-grow: 1.15
+}
+
+.footer-grid>:nth-child(3) {
+    flex-grow: 1.2
+}
+
+.f-brand {
+    font-size: 13px;
+    line-height: 1.9
+}
+
+.f-brand p {
+    margin: 16px 0 18px;
+    max-width: 300px;
+    opacity: .95
+}
+
+.f-brand h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 6px
+}
+
+.f-muted {
+    display: block;
+    opacity: .9;
+    margin-bottom: 12px
+}
+
+.f-badges {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 22px
+}
+
+.f-badges img {
+    height: 34px;
+    width: auto
+}
+
+.f-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px
+}
+
+.f-social a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, .18);
+    border: 1px solid rgba(255, 255, 255, .55);
+    transition: background .2s
+}
+
+.f-social a:hover {
+    background: rgba(255, 255, 255, .32)
+}
+
+.f-col h3 {
+    font-size: 22px;
+    font-weight: 700;
+    display: inline-block;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    position: relative
+}
+
+.f-col h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    inset-inline: 0;
+    height: 2px;
+    width: 50%;
+    background: #fff;
+    border-radius: 2px
+}
+
+.f-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px
+}
+
+.f-col li {
+    position: relative;
+    padding-inline-start: 14px
+}
+
+.f-col li::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: .8em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #fff
+}
+
+.f-col a {
+    opacity: .95;
+    transition: opacity .2s
+}
+
+.f-col a:hover {
+    opacity: 1;
+    text-decoration: underline
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, .35);
+    padding: 18px 0 22px;
+    font-size: 14px
+}
+

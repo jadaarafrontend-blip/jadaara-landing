@@ -1,45 +1,409 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Jadara</title>
+<html lang="ar" dir="rtl">
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
-            integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
-            integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link rel="stylesheet" href="./css/global.css" />
-        <link rel="stylesheet" href="./css/main.css" />
-        <link rel="stylesheet" href="./css/responsive.css" />
-        <link rel="stylesheet" href="./css/ar.css" />
-        <link rel="stylesheet" href="./css/en.css" />
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jadara</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+        integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link rel="stylesheet" href="./css/ar.css" />
+    <link rel="stylesheet" href="./css/en.css" />
+</head>
+
+<body>
 
 
 
+    <!-- ===== ICON SPRITE ===== -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-grid" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="M2.35 .85h4c.83 0 1.5.67 1.5 1.5v4c0 .83-.67 1.5-1.5 1.5h-4c-.83 0-1.5-.67-1.5-1.5v-4c0-.83.67-1.5 1.5-1.5ZM13.35 .85h4c.83 0 1.5.67 1.5 1.5v4c0 .83-.67 1.5-1.5 1.5h-4c-.83 0-1.5-.67-1.5-1.5v-4c0-.83.67-1.5 1.5-1.5ZM2.35 11.85h4c.83 0 1.5.67 1.5 1.5v4c0 .83-.67 1.5-1.5 1.5h-4c-.83 0-1.5-.67-1.5-1.5v-4c0-.83.67-1.5 1.5-1.5ZM13.35 11.85h4c.83 0 1.5.67 1.5 1.5v4c0 .83-.67 1.5-1.5 1.5h-4c-.83 0-1.5-.67-1.5-1.5v-4c0-.83.67-1.5 1.5-1.5Z" />
+        </symbol>
+        <symbol id="i-trend" viewBox="0 0 22 14" fill="none" stroke="currentColor" stroke-width="1.7"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M.85 12.85l7-7 5 4 8-9M14.85.85h6v6" />
+        </symbol>
+        <symbol id="i-users" viewBox="0 0 20 18" fill="none" stroke="currentColor" stroke-width="1.7"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="M11.85 4.85a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM.85 16.85c0-4 3-6 7-6s7 2 7 6M14.85 1.85a3.5 3.5 0 0 1 0 7M18.85 16.85c0-3-1.5-4.5-3-5" />
+        </symbol>
+        <symbol id="i-card" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="1.7"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="M3.35.85h15c1.38 0 2.5 1.12 2.5 2.5v9c0 1.38-1.12 2.5-2.5 2.5h-15c-1.38 0-2.5-1.12-2.5-2.5v-9C.85 1.97 1.97.85 3.35.85ZM.85 5.85h20" />
+        </symbol>
+        <symbol id="i-settings" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="M11.85 8.85a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM16.62 6.94a8 8 0 0 1 0 3.82M15.7 4.7a8 8 0 0 0-2.7-2.7M10.76 1.08a8 8 0 0 0-3.820 0M4.7 2a8 8 0 0 0-2.7 2.7M1.08 6.94a8 8 0 0 0 0 3.82M2 13a8 8 0 0 0 2.7 2.7M6.94 16.62a8 8 0 0 0 3.82 0M13 15.7a8 8 0 0 0 2.7-2.7" />
+        </symbol>
+        <symbol id="i-swap" viewBox="0 0 20 18" fill="none" stroke="currentColor" stroke-width="1.7"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M.85 4.85h16l-4-4M18.85 12.85h-16l4 4" />
+        </symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9l6 6 6-6" />
+        </symbol>
+        <symbol id="i-in" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.930c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z" />
+        </symbol>
+    </svg>
 
 
 
 
-        
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"
-            integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
-        <script src="./js/main.js"></script>
-    </body>
+
+
+    <!-- ================= DASHBOARD SECTION ================= -->
+    <section class="dash-section">
+        <div class="main-container">
+            <h2 class="sec-title">لوحة تحكم تدير بيها تطبيقك بالكامل</h2>
+            <p class="sec-sub">تابع تطبيقك من شاشة واحدة، وبصلاحيات تحددها بنفسك.</p>
+
+            <div class="dash-frame">
+                <div class="dash-inner">
+
+                    <aside class="dash-side">
+                        <div class="side-head">
+                            <h3>لوحة التحكم</h3>
+                            <svg class="side-head-icon">
+                                <use href="#i-grid" />
+                            </svg>
+                        </div>
+                        <span class="side-label">القائمة</span>
+                        <ul class="side-menu">
+                            <li class="active"><span>لوحة التحكم</span><svg class="ic" width="20" height="20">
+                                    <use href="#i-grid" />
+                                </svg></li>
+                            <li><span>التحليلات</span><svg class="ic" width="22" height="14">
+                                    <use href="#i-trend" />
+                                </svg></li>
+                            <li><span>العملاء</span><svg class="ic" width="20" height="18">
+                                    <use href="#i-users" />
+                                </svg></li>
+                            <li><span>المدفوعات</span><svg class="ic" width="22" height="16">
+                                    <use href="#i-card" />
+                                </svg></li>
+                            <li><span>الإعدادات</span><svg class="ic" width="18" height="18">
+                                    <use href="#i-settings" />
+                                </svg></li>
+                        </ul>
+                    </aside>
+
+                    <div class="dash-main">
+                        <div class="stats">
+                            <div class="stat stat--main-color">
+                                <div class="stat-top">
+                                    <span class="stat-icon"><svg width="20" height="18">
+                                            <use href="#i-swap" />
+                                        </svg></span>
+                                    <span class="stat-badge" dir="ltr">+23.7%</span>
+                                </div>
+                                <strong class="stat-val" dir="ltr">94.2%</strong>
+                                <span class="stat-label">معدل التحويل</span>
+                            </div>
+                            <div class="stat stat--blue">
+                                <div class="stat-top">
+                                    <span class="stat-icon"><svg width="20" height="18">
+                                            <use href="#i-swap" />
+                                        </svg></span>
+                                    <span class="stat-badge" dir="ltr">+23.7%</span>
+                                </div>
+                                <strong class="stat-val">84.2K ريال</strong>
+                                <span class="stat-label">الإيرادات</span>
+                            </div>
+                            <div class="stat stat--gray">
+                                <div class="stat-top">
+                                    <span class="stat-icon"><svg width="20" height="18">
+                                            <use href="#i-swap" />
+                                        </svg></span>
+                                    <span class="stat-badge" dir="ltr">+23.7%</span>
+                                </div>
+                                <strong class="stat-val" dir="ltr">12,847</strong>
+                                <span class="stat-label">اجمالي المستخدمين</span>
+                            </div>
+                        </div>
+
+                        <div class="chart-card">
+                            <div class="chart-head">
+                                <div>
+                                    <h3>تحليلات الإيرادات</h3>
+                                    <p>نظرة عامة على الأداء الشهري</p>
+                                </div>
+                                <ul class="legend">
+                                    <li><i class="dot dot--main-color"></i>المستخدمين</li>
+                                    <li><i class="dot dot--blue"></i>الإيرادات</li>
+                                </ul>
+                            </div>
+
+                            <svg class="chart" viewBox="0 0 960 410" role="img"
+                                aria-label="رسم بياني للمستخدمين والإيرادات من يناير إلى يوليو">
+                                <defs>
+                                    <linearGradient id="g-red" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" stop-color="#E5483C" stop-opacity=".28" />
+                                        <stop offset="1" stop-color="#E5483C" stop-opacity=".04" />
+                                    </linearGradient>
+                                    <linearGradient id="g-blue" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" stop-color="#2B2F5A" stop-opacity=".3" />
+                                        <stop offset="1" stop-color="#2B2F5A" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <g class="grid">
+                                    <line x1="60" x2="940" y1="30" y2="30" />
+                                    <line x1="60" x2="940" y1="136.7" y2="136.7" />
+                                    <line x1="60" x2="940" y1="243.3" y2="243.3" />
+                                    <line x1="60" x2="940" y1="350" y2="350" />
+                                </g>
+                                <g class="axis" text-anchor="start"><text x="0" y="35">200K</text><text x="0"
+                                        y="141.7">150K</text><text x="0" y="248.3">100K</text><text x="0"
+                                        y="355">50K</text></g>
+                                <g class="axis" text-anchor="middle"><text x="80" y="402">يناير</text><text x="220"
+                                        y="402">فبراير</text><text x="360" y="402">مارس</text><text x="500"
+                                        y="402">أبريل</text><text x="640" y="402">مايو</text><text x="780"
+                                        y="402">يونيو</text><text x="920" y="402">يوليو</text></g>
+                                <path class="area" fill="url(#g-blue)"
+                                    d="M80 339.3C150 339.3 150 318 220 318C290 318 290 279.6 360 279.6C430 279.6 430 245.5 500 245.5C570 245.5 570 194.3 640 194.3C710 194.3 710 168.7 780 168.7C850 168.7 850 140.9 920 140.9L920 365L80 365Z" />
+                                <path class="area" fill="url(#g-red)"
+                                    d="M80 281.7C150 281.7 150 236.9 220 236.9C290 236.9 290 196.4 360 196.4C430 196.4 430 179.3 500 179.3C570 179.3 570 117.5 640 117.5C710 117.5 710 96.1 780 96.1C850 96.1 850 62 920 62L920 140.9C850 140.9 850 168.7 780 168.7C710 168.7 710 194.3 640 194.3C570 194.3 570 245.5 500 245.5C430 245.5 430 279.6 360 279.6C290 279.6 290 318 220 318C150 318 150 339.3 80 339.3Z" />
+                                <path class="line line--blue" pathLength="1"
+                                    d="M80 339.3C150 339.3 150 318 220 318C290 318 290 279.6 360 279.6C430 279.6 430 245.5 500 245.5C570 245.5 570 194.3 640 194.3C710 194.3 710 168.7 780 168.7C850 168.7 850 140.9 920 140.9" />
+                                <path class="line line--main-color" pathLength="1"
+                                    d="M80 281.7C150 281.7 150 236.9 220 236.9C290 236.9 290 196.4 360 196.4C430 196.4 430 179.3 500 179.3C570 179.3 570 117.5 640 117.5C710 117.5 710 96.1 780 96.1C850 96.1 850 62 920 62" />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FAQ SECTION ================= -->
+    <section class="faq-section">
+        <span class="faq-deco" aria-hidden="true"></span>
+        <div class="main-container faq-wrap">
+            <h2 class="sec-title">أسئلة شائعة</h2>
+            <p class="sec-sub">إجابات على أكثر الأسئلة شيوعًا عن تكلفة ومدة تطوير التطبيقات</p>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false"><span class="faq-num">01</span><span class="faq-text">كم
+                            تستغرق مدة تطوير تطبيق احترافي؟</span><svg class="faq-chev">
+                            <use href="#i-chevron" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div>
+                            <p>تستغرق النسخة الأولى (MVP) عادةً من 8 إلى 12 أسبوعًا، بينما التطبيقات المتكاملة تحتاج من
+                                4 إلى 6 أشهر حسب عدد الشاشات والتكاملات.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item is-open">
+                    <button class="faq-q" aria-expanded="true"><span class="faq-num">02</span><span class="faq-text">ما
+                            هي تكلفة تطوير تطبيق في السعودية؟</span><svg class="faq-chev">
+                            <use href="#i-chevron" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div>
+                            <p>تكلفة MVP iOS أو Android تبدأ من 35–60 ألف ريال. تطبيق احترافي بمنصتين + باك إند + لوحة
+                                تحكم يبدأ من 80–150 ألف. تطبيق enterprise مع تكاملات معقدة 200+ ألف. السعر النهائي يعتمد
+                                على عدد الشاشات، التكاملات، ومستوى التعقيد التقني.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false"><span class="faq-num">03</span><span
+                            class="faq-text">أيهما أفضل للسوق السعودي؟ — Android أو iOS</span><svg class="faq-chev">
+                            <use href="#i-chevron" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div>
+                            <p>ننصح غالبًا بالإطلاق على المنصتين معًا باستخدام تقنيات Cross-platform لتغطية كامل السوق
+                                بتكلفة أقل.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false"><span class="faq-num">04</span><span class="faq-text">هل
+                            التطبيق متوافق مع نظام حماية البيانات السعودي PDPL؟</span><svg class="faq-chev">
+                            <use href="#i-chevron" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div>
+                            <p>نعم، نبني التطبيق وفق متطلبات نظام حماية البيانات الشخصية PDPL من حيث التشفير وصلاحيات
+                                الوصول وسياسات الخصوصية.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false"><span class="faq-num">05</span><span class="faq-text">هل
+                            أحصل على ملكية الكود المصدري بعد التسليم؟</span><svg class="faq-chev">
+                            <use href="#i-chevron" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div>
+                            <p>نعم، تنتقل ملكية الكود المصدري بالكامل إليك بعد التسليم وسداد المستحقات.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false"><span class="faq-num">06</span><span
+                            class="faq-text">أين يُستضاف التطبيق؟ Google Cloud Dammam أم AWS؟</span><svg
+                            class="faq-chev">
+                            <use href="#i-chevron" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div>
+                            <p>نختار الاستضافة حسب احتياج المشروع ومتطلبات توطين البيانات، ونوفر الخيارين داخل المملكة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false"><span class="faq-num">07</span><span class="faq-text">هل
+                            تبنون منصات SaaS وتطبيقات بنماذج اشتراك؟</span><svg class="faq-chev">
+                            <use href="#i-chevron" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div>
+                            <p>نعم، نطوّر منصات SaaS متكاملة مع إدارة الاشتراكات والفوترة الدورية ولوحات تحكم متعددة
+                                الصلاحيات.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false"><span class="faq-num">08</span><span class="faq-text">ما
+                            بوابات الدفع والتكاملات البنكية المدعومة؟</span><svg class="faq-chev">
+                            <use href="#i-chevron" />
+                        </svg></button>
+                    <div class="faq-a">
+                        <div>
+                            <p>ندعم بوابات الدفع المحلية مثل مدى وApple Pay وSTC Pay، بالإضافة إلى Moyasar وHyperPay
+                                وTap.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <svg class="footer-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+            <path fill="#fff"
+                d="M0 0H1440V30C1380 70 1300 92 1180 80C1020 64 900 8 720 10C540 12 420 70 260 72C150 74 60 50 0 30Z" />
+        </svg>
+
+        <div class="main-container footer-grid">
+            <div class="f-brand">
+                <img src="assets/jadara-logo-white.png" alt="جدارة" loading="lazy" decoding="async">
+                <p>جدارة شركة سعودية مُرخصة، تقوم بأنشطتها تسعى لتحقيق طموحاتك وتلبية تطلعاتك بمنطقة الخليج منذ أكثر من
+                    عشر سنوات، نحو المستقبل.</p>
+                <h4>مُعتمدة رسمياً في كلاً من</h4>
+                <span class="f-muted">منشآت التجارة ومنصة اعتماد</span>
+                <div class="f-badges">
+                    <img src="assets/monshaat-badge.png" alt="منشآت" loading="lazy" decoding="async">
+                    <img src="assets/mowthooq.png" alt="موثوق" loading="lazy" decoding="async">
+                </div>
+                <h4>متوفرين أيضاً على :</h4>
+                <div class="f-social">
+                    <a href="#" aria-label="LinkedIn"><svg width="13" height="13">
+                            <use href="#i-in" />
+                        </svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg width="13" height="13">
+                            <use href="#i-in" />
+                        </svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg width="13" height="13">
+                            <use href="#i-in" />
+                        </svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg width="13" height="13">
+                            <use href="#i-in" />
+                        </svg></a>
+                </div>
+            </div>
+
+            <nav class="f-col">
+                <h3>جدارة</h3>
+                <ul>
+                    <li><a href="#">جدارة في سطور</a></li>
+                    <li><a href="#">الملف التعريفي</a></li>
+                    <li><a href="#">التوظيف</a></li>
+                    <li><a href="#">طرق الدفع</a></li>
+                    <li><a href="#">الكتب المجانية</a></li>
+                    <li><a href="#">إتفاقية المستخدم</a></li>
+                    <li><a href="#">تقنيات و أساليب العمل</a></li>
+                    <li><a href="#">العروض الخاصة</a></li>
+                    <li><a href="#">منهجيتنا في تنفيذ المشاريع</a></li>
+                </ul>
+            </nav>
+
+            <nav class="f-col">
+                <h3>خدمتنا</h3>
+                <ul>
+                    <li><a href="#">تصميم وتطوير المواقع الالكترونية</a></li>
+                    <li><a href="#">تصميم وتطوير التطبيقات الالكترونية</a></li>
+                    <li><a href="#">تصميم وتطوير المتاجر الإلكترونية</a></li>
+                    <li><a href="#">برمجة الأنظمة الالكترونية</a></li>
+                    <li><a href="#">ادارة الحملات الدعائية والتسويقية</a></li>
+                    <li><a href="#">الإستضافة</a></li>
+                    <li><a href="#">الدعم الفني</a></li>
+                    <li><a href="#">حجز وإدارة السيرفرات</a></li>
+                    <li><a href="#">شهادات التشفير والحماية SSL</a></li>
+                    <li><a href="#">إنشاء وتصميم الهوية التجارية</a></li>
+                    <li><a href="#">الموشن جرافيك</a></li>
+                    <li><a href="#">خدمة البريد الإلكتروني للشركات</a></li>
+                </ul>
+            </nav>
+
+            <nav class="f-col">
+                <h3>روابط هامة</h3>
+                <ul>
+                    <li><a href="#">طلب زيارة فني "مندوب"</a></li>
+                    <li><a href="#">طلب مقابلة إلكترونية</a></li>
+                    <li><a href="#">تسجيل عميل جديد</a></li>
+                    <li><a href="#">تسجيل دخول</a></li>
+                    <li><a href="#">فتح تذكرة</a></li>
+                    <li><a href="#">الأسئلة الشائعة (FAQ)</a></li>
+                    <li><a href="#">إتفاقية سرية المعلومات</a></li>
+                    <li><a href="#">حالة الأنظمة</a></li>
+                    <li><a href="#">نموذج عرض سعر</a></li>
+                    <li><a href="#">الابلاغ عن مشكلة تقنية</a></li>
+                    <li><a href="#">منصة اجتماعات جدارة</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main-container footer-bottom">
+            <span>جميع الحقوق محفوظة — جدارة 2026</span>
+            <span dir="ltr">Designed and Powered by Jadara</span>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"
+        integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/main.js"></script>
+</body>
+
 </html>
