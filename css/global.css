@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "font_regular";
+    src: url("../fonts/Cairo-Regular.ttf");
+}
+
+@font-face {
+    font-family: "font_bold";
+    src: url("../fonts/Cairo-Bold.ttf");
+}
+
+
+:root {
+    --main-color: #E5483C;
+    --second-color: ;
+    --bg-color: #FDF0EE;
+    --white-color: #fff;
+    --black-color: #000;
+    --main-color: #00B2F8;
+    --text-color: #2B2F3A;
+    --second-text-color: #555555;
+}
+
+
+::selection {
+    background-color: var(--main-color);
+    color: var(--white-color);
+}
+
+
+
+.main-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button:focus,
+a {
+    outline: none;
+}
+
+button {
+    border: none;
+}
+
+*:focus {
+    outline: none;
+}
