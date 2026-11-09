@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jadara</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+        integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link rel="stylesheet" href="./css/ar.css" />
+    <link rel="stylesheet" href="./css/en.css" />
+</head>
+
+
+<body>
+    <main>
+        <!-- مراحل تطوير التطبيق -->
+        <section class="steps" id="steps">
+            <div class="main-container">
+                <div class="title-head">
+                    <h2>مراحل تطوير التطبيق</h2>
+                    <p>من الفكرة للنشر على المتاجر</p>
+                </div>
+
+                <div class="row gx-3 gx-xl-4 gy-4 align-items-xl-end steps-row" id="steps-track">
+                    <!-- الخط المنقط -->
+                    <svg class="steps__path" aria-hidden="true">
+                        <defs>
+                            <mask id="steps-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
+                                <path class="steps__mask-path" d=""></path>
+                            </mask>
+                        </defs>
+                        <path class="steps__dots" d="" mask="url(#steps-mask)"></path>
+
+                        <!-- النقطة المنورة اللي بتمشي على الخط -->
+                        <g class="steps__pulse">
+                            <circle class="steps__pulse-halo" r="11"></circle>
+                            <circle class="steps__pulse-core" r="5"></circle>
+                        </g>
+                    </svg>
+
+                    <div class="col-12 col-lg-6 col-xl-3">
+                        <article class="step" style="--n:0">
+                            <span class="step-badge">01</span>
+                            <div class="step-card">
+                                <h3 class="step-title">دراسة المتطلبات</h3>
+                                <p class="step-desc">تحليل المشروع وتحديد النطاق والجدول الزمني</p>
+                                <ul class="step-checks">
+                                    <li><i class="fa-solid fa-circle-check"></i> تحليل المتطلبات</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> تحديد نطاق المشروع</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> الجدول الزمني</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-6 col-xl-3">
+                        <article class="step" style="--n:1">
+                            <span class="step-badge">02</span>
+                            <div class="step-card">
+                                <h3 class="step-title">UI/UX</h3>
+                                <p class="step-desc">تصميم واجهات المستخدم وتجربة الاستخدام</p>
+                                <div class="ui-ux">
+                                    <img src="./assets/images/UI-UX.svg" alt="UI-UX">
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-6 col-xl-3">
+                        <article class="step" style="--n:2">
+                            <span class="step-badge">03</span>
+                            <div class="step-card">
+                                <h3 class="step-title">البرمجة والتكامل</h3>
+                                <p class="step-desc">كتابة الكود والاختبار والربط مع الأنظمة</p>
+                                <div class="code">
+                                    <img src="./assets/images/code.svg" alt="code">
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-6 col-xl-3">
+                        <article class="step step-final" style="--n:3">
+                            <img src="./assets/images/step-flag.svg" class="step-flag" alt="">
+                            <span class="step-badge">04</span>
+                            <div class="step-card">
+                                <h3 class="step-title">النشر والتسليم</h3>
+                                <p class="step-desc">نشر التطبيق على المتاجر مع الدعم الفني</p>
+                                <div class="publish">
+                                    <div class="publish-icon"><i class="fa-solid fa-check"></i></div>
+                                    <h4 class="publish-title">جاهز للنشر!</h4>
+                                    <div class="publish-stores">
+                                        <button type="button">App Store</button>
+                                        <button type="button">Google Play</button>
+                                    </div>
+                                    <div class="publish-bar"><span></span></div>
+                                    <p class="publish-progress">اكتمال البناء 100%</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- المشاريع -->
+        <section class="projects" id="projects">
+            <div class="main-container">
+
+                <div class="title-head">
+                    <h2>مشاريع تطبيقات في السعودية</h2>
+                    <p>نماذج من تطبيقات ومنصات طورناها لعملاء في الرياض وجدة والدمام</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project-card">
+                            <div class="project-img">
+                                <img src="./assets/images/project.png" alt="تطبيق لينكو لتجار الاجهزة المستعملة">
+                            </div>
+
+                            <div class="project-body">
+                                <h3 class="project-title">تطبيق لينكو لتجار الاجهزة المستعملة</h3>
+                                <p class="project-type">تطبيق إلكتروني</p>
+                                <p class="project-date">الإثنين 24 ربيع الثاني 1448 هـ</p>
+
+                                <div class="project-footer">
+                                    <span class="project-rate">
+                                        <bdi dir="ltr" data-count="4.7" data-decimals="1">4.7</bdi>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                    <span class="project-downloads">
+                                        تحميل
+                                        <bdi dir="ltr" data-count="6" data-prefix="+" data-suffix="K">+6K</bdi>
+                                    </span>
+                                    <a href="#" class="project-btn" target="_blank" rel="noopener">جرب التطبيق</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project-card">
+                            <div class="project-img">
+                                <img src="./assets/images/project.png" alt="تطبيق لينكو لتجار الاجهزة المستعملة">
+                            </div>
+
+                            <div class="project-body">
+                                <h3 class="project-title">تطبيق لينكو لتجار الاجهزة المستعملة</h3>
+                                <p class="project-type">تطبيق إلكتروني</p>
+                                <p class="project-date">الإثنين 24 ربيع الثاني 1448 هـ</p>
+
+                                <div class="project-footer">
+                                    <span class="project-rate">
+                                        <bdi dir="ltr" data-count="4.7" data-decimals="1">4.7</bdi>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                    <span class="project-downloads">
+                                        تحميل
+                                        <bdi dir="ltr" data-count="6" data-prefix="+" data-suffix="K">+6K</bdi>
+                                    </span>
+                                    <a href="#" class="project-btn" target="_blank" rel="noopener">جرب التطبيق</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project-card">
+                            <div class="project-img">
+                                <img src="./assets/images/project.png" alt="تطبيق لينكو لتجار الاجهزة المستعملة">
+                            </div>
+
+                            <div class="project-body">
+                                <h3 class="project-title">تطبيق لينكو لتجار الاجهزة المستعملة</h3>
+                                <p class="project-type">تطبيق إلكتروني</p>
+                                <p class="project-date">الإثنين 24 ربيع الثاني 1448 هـ</p>
+
+                                <div class="project-footer">
+                                    <span class="project-rate">
+                                        <bdi dir="ltr" data-count="4.7" data-decimals="1">4.7</bdi>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                    <span class="project-downloads">
+                                        تحميل
+                                        <bdi dir="ltr" data-count="6" data-prefix="+" data-suffix="K">+6K</bdi>
+                                    </span>
+                                    <a href="#" class="project-btn" target="_blank" rel="noopener">جرب التطبيق</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- آراء العملاء -->
+        <section class="reviews" id="reviews">
+            <div class="main-container">
+
+                <div class="title-head pb-5">
+                    <h2>آراء عملائنا في السعودية</h2>
+                    <p>شهادات من شركات في الرياض تعاملت معنا</p>
+
+                    <ul class="reviews-chips">
+                        <li>تأسست في <strong>2016</strong></li>
+                        <li>سنوات خبرة <strong>10</strong></li>
+                    </ul>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="review">
+                            <div class="review-top">
+                                <span class="review-quote" aria-hidden="true"></span>
+                                <div class="review-stars" role="img" aria-label="تقييم 5 من 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <p class="review-text">
+                                التواصل كان واضح من أول يوم، والتسليم كان في الموعد.<br>
+                                الكود منظم وفريقنا استلمه بدون مشاكل
+                            </p>
+                            <div class="review-author">
+                                <!-- حرف: ف | أو صورة:
+                                    <span class="review-avatar">
+                                        <img src="./assets/images/client-1.jpg" alt="م. فهد العتيبي">
+                                    </span>
+                                -->
+                                <span class="review-avatar" aria-hidden="true">ف</span>
+                                <div>
+                                    <h4 class="review-name">م. فهد العتيبي</h4>
+                                    <p class="review-role">المدير التنفيذي • تقنية الخليج</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="review">
+                            <div class="review-top">
+                                <span class="review-quote" aria-hidden="true"></span>
+                                <div class="review-stars" role="img" aria-label="تقييم 5 من 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <p class="review-text">
+                                التواصل كان واضح من أول يوم، والتسليم كان في الموعد.<br>
+                                الكود منظم وفريقنا استلمه بدون مشاكل
+                            </p>
+                            <div class="review-author">
+                                <!--حرف: ف | أو صورة:
+                                    <span class="review-avatar">
+                                        <img src="./assets/images/client-1.jpg" alt="م. فهد العتيبي">
+                                    </span>
+                                -->
+                                <span class="review-avatar" aria-hidden="true">ف</span>
+                                <div>
+                                    <h4 class="review-name">م. فهد العتيبي</h4>
+                                    <p class="review-role">المدير التنفيذي • تقنية الخليج</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-12 col-lg-4">
+                        <article class="review">
+                            <div class="review-top">
+                                <span class="review-quote" aria-hidden="true"></span>
+                                <div class="review-stars" role="img" aria-label="تقييم 5 من 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <p class="review-text">
+                                التواصل كان واضح من أول يوم، والتسليم كان في الموعد.<br>
+                                الكود منظم وفريقنا استلمه بدون مشاكل
+                            </p>
+                            <div class="review-author">
+                                <!-- حرف: ف | أو صورة:
+                                    <span class="review-avatar">
+                                        <img src="./assets/images/client-1.jpg" alt="م. فهد العتيبي">
+                                    </span>
+                                -->
+                                <span class="review-avatar" aria-hidden="true">ف</span>
+                                <div>
+                                    <h4 class="review-name">م. فهد العتيبي</h4>
+                                    <p class="review-role">المدير التنفيذي • تقنية الخليج</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <article class="review">
+                            <div class="review-top">
+                                <span class="review-quote" aria-hidden="true"></span>
+                                <div class="review-stars" role="img" aria-label="تقييم 5 من 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+
+                            <!--
+                                data-src      = رابط ملف الصوت (من الـ API). لو فاضي بيشتغل تجريبي
+                                data-duration = مدة التسجيل بالثواني (اختياري مع الملف الحقيقي)
+                                data-start    = نسبة التقدم الابتدائية (للتصميم بس، شيليها مع الملف الحقيقي)
+                            -->
+                            <div class="player" data-src="./assets/audio/_أحسن_القصص_سورة_يوسف_كاملة_بصوت_الغرّيد_الشيخ_أ_د_ياسر_الدوسري.m4a" >
+                                <button class="player-btn" type="button" aria-label="تشغيل التسجيل">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                                <div class="player-wave" aria-hidden="true"></div>
+                                <span class="player-time">0:35</span>
+                            </div>
+
+                            <h4 class="review-label">نص التسجيل</h4>
+                            <p class="review-text review-text-lg">
+                                التصميم مريح للمرضى وكبار السن، وتم ربط التطبيق بنظام المواعيد لدينا دون أي توقف في الخدمة.
+                            </p>
+                            <div class="review-author">
+                                <!-- حرف: ف | أو صورة:
+                                    <span class="review-avatar">
+                                        <img src="./assets/images/client-1.jpg" alt="م. فهد العتيبي">
+                                    </span>
+                                -->
+                                <span class="review-avatar" aria-hidden="true">ف</span>
+                                <div>
+                                    <h4 class="review-name">م. فهد العتيبي</h4>
+                                    <p class="review-role">المدير التنفيذي • تقنية الخليج</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <article class="review">
+                            <div class="review-top">
+                                <span class="review-quote" aria-hidden="true"></span>
+                                <div class="review-stars" role="img" aria-label="تقييم 5 من 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+
+                            <!--
+                                data-src      = رابط ملف الصوت (من الـ API). لو فاضي بيشتغل تجريبي
+                                data-duration = مدة التسجيل بالثواني (اختياري مع الملف الحقيقي)
+                                data-start    = نسبة التقدم الابتدائية (للتصميم بس، شيليها مع الملف الحقيقي)
+                            -->
+                            <div class="player" data-src="./assets/audio/_أحسن_القصص_سورة_يوسف_كاملة_بصوت_الغرّيد_الشيخ_أ_د_ياسر_الدوسري.m4a">
+                                <button class="player-btn" type="button" aria-label="تشغيل التسجيل">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                                <div class="player-wave" aria-hidden="true"></div>
+                                <span class="player-time">0:35</span>
+                            </div>
+
+                            <h4 class="review-label">نص التسجيل</h4>
+                            <p class="review-text review-text-lg">
+                                التصميم مريح للمرضى وكبار السن، وتم ربط التطبيق بنظام المواعيد لدينا دون أي توقف في الخدمة.
+                            </p>
+                            <div class="review-author">
+                                <!-- حرف: ف | أو صورة:
+                                    <span class="review-avatar">
+                                        <img src="./assets/images/client-1.jpg" alt="م. فهد العتيبي">
+                                    </span>
+                                -->
+                                <span class="review-avatar" aria-hidden="true">ف</span>
+                                <div>
+                                    <h4 class="review-name">م. فهد العتيبي</h4>
+                                    <p class="review-role">المدير التنفيذي • تقنية الخليج</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"
+        integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
