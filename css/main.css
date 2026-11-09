@@ -1469,3 +1469,444 @@
     font-size: 14px
 }
 
+
+
+
+
+
+
+
+.showcase {
+    --sc-red: #e8453c;
+    --sc-red-tint: #f6c9c5;
+    --sc-coral: #ef5b50;
+    --sc-blue: #2f7dc1;
+    --sc-blue-tint: #bcd6ee;
+    --sc-ink: #1f2a37;
+    --sc-muted: #6b7280;
+    --sc-radius: 18px;
+   
+    padding-block: 48px;
+  }
+   
+  /* ---------- الكروت الجانبية (Tabs) ---------- */
+  .showcase__tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+  }
+   
+  .showcase__tab {
+    --accent: var(--sc-red);
+    --tint: var(--sc-red-tint);
+   
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    width: 100%;
+    padding: 16px 18px;
+    text-align: start;
+    background: #fff;
+    border: 1.5px solid var(--tint);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+   
+  .showcase__tab--red   { --accent: var(--sc-red);   --tint: var(--sc-red-tint); }
+  .showcase__tab--blue  { --accent: var(--sc-blue);  --tint: var(--sc-blue-tint); }
+  .showcase__tab--coral { --accent: var(--sc-coral); --tint: var(--sc-red-tint); }
+   
+  .showcase__tab:hover {
+    border-color: var(--accent);
+  }
+   
+  .showcase__tab.is-active {
+    border-color: var(--accent);
+    box-shadow: 0 10px 24px -12px var(--accent);
+    transform: translateX(6px); /* بيتحرك ناحية الكارت الكبير (RTL) */
+  }
+   
+  .showcase__tab:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+   
+  .showcase__icon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: #fff;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+   
+  .showcase__body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+   
+  .showcase__body strong {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--sc-ink);
+  }
+   
+  .showcase__body small {
+    font-size: 0.8rem;
+    color: var(--sc-muted);
+  }
+   
+  .showcase__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+   
+  .showcase__tags em {
+    font-style: normal;
+    font-size: 0.7rem;
+    line-height: 1;
+    padding: 5px 9px;
+    color: var(--accent);
+    border: 1px solid var(--tint);
+    border-radius: 999px;
+  }
+   
+  /* ---------- الكارت الكبير (Stage) ---------- */
+  /* كل الـ panels فوق بعض في نفس الخلية عشان الارتفاع ميتغيرش وقت التبديل */
+  .showcase__stage {
+    display: grid;
+    height: 100%;
+  }
+   
+  .showcase__panel {
+    position: relative;
+    grid-area: 1 / 1;
+    min-height: 340px;
+    padding: 32px;
+    overflow: hidden;
+    color: #fff;
+    border-radius: var(--sc-radius);
+    background: linear-gradient(135deg, #e8403f, #f0603f);
+   
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s;
+  }
+   
+  .showcase__panel.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+   
+  .showcase__panel--red   { background: linear-gradient(135deg, #e8403f, #f0603f); }
+  .showcase__panel--blue  { background: linear-gradient(135deg, #2a6fb5, #3f95dc); }
+  .showcase__panel--coral { background: linear-gradient(135deg, #e8453c, #f05a3e); }
+   
+  /* دوايـر منقطة في الخلفية */
+  .showcase__panel::before,
+  .showcase__panel::after {
+    content: "";
+    position: absolute;
+    border: 1px dashed rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .showcase__panel::before { width: 360px; height: 360px; left: -90px; bottom: -150px; }
+  .showcase__panel::after  { width: 520px; height: 520px; left: -170px; bottom: -250px; }
+   
+  .showcase__panel .row {
+    --bs-gutter-x: 0;
+    position: relative;
+    z-index: 1;
+  }
+   
+  .showcase__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+  }
+   
+  .showcase__badge {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
+   
+  .showcase__title {
+    margin: 0 0 14px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.7;
+  }
+   
+  .showcase__title span {
+    display: block;
+  }
+   
+  .showcase__text {
+    margin: 0;
+    max-width: 46ch;
+    font-size: 0.9rem;
+    line-height: 2;
+    opacity: 0.92;
+  }
+   
+  /* ---------- الجزء البصري (Mockups) ---------- */
+  .showcase__visual {
+    position: relative;
+    min-height: 260px;
+  }
+   
+  /* ===== Phones ===== */
+  .phone {
+    position: absolute;
+    background: #fff;
+    border-radius: 24px;
+    padding: 9px;
+    box-shadow: 0 22px 44px -10px rgba(0, 0, 0, 0.3);
+  }
+   
+  .phone--back  { width: 132px; height: 250px; left: 6%;  bottom: -50px; transform: rotate(-8deg); }
+  .phone--front { width: 152px; height: 280px; left: 36%; bottom: -70px; }
+   
+  .phone__screen {
+    position: relative;
+    height: 100%;
+    padding: 10px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 16px;
+  }
+   
+  .phone__screen--map { background: #e8f1fb; }
+  .phone__chart { display: block; width: 100%; margin-top: 18px; }
+   
+  .phone__pill {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 70px;
+    height: 14px;
+    background: #fff;
+    border-radius: 8px;
+  }
+   
+  .phone__btn {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 40px;
+    height: 22px;
+    background: linear-gradient(135deg, #e8453c, #f0603f);
+    border-radius: 10px;
+  }
+   
+  .phone__card {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 78px;
+    padding: 10px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #e8453c, #f26a4a);
+    border-radius: 12px;
+  }
+   
+  .phone__card i {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 4px;
+  }
+   
+  .phone__row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    margin-bottom: 8px;
+    background: #f4f5f7;
+    border-radius: 8px;
+  }
+   
+  .phone__row span {
+    flex: 1;
+    height: 5px;
+    background: #d5d8de;
+    border-radius: 3px;
+  }
+   
+  .dot { width: 14px; height: 14px; border-radius: 4px; }
+  .dot--red  { background: #f08f8a; border-radius: 50%; }
+  .dot--blue { background: var(--sc-blue); }
+  .dot--grey { background: #c4c8cf; }
+   
+  /* ===== Windows (UI/UX + Dashboard) ===== */
+  .win {
+    position: absolute;
+    left: 4%;
+    bottom: -30px;
+    width: 92%;
+    height: 240px;
+    background: #fff;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 22px 44px -10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+   
+  .win__bar {
+    display: flex;
+    gap: 5px;
+    padding: 10px 12px;
+    background: #f1f3f6;
+  }
+   
+  .win__bar i {
+    width: 8px;
+    height: 8px;
+    background: #cfd4db;
+    border-radius: 50%;
+  }
+   
+  .win__body { padding: 12px; }
+   
+  /* UI/UX */
+  .ux-hero {
+    height: 70px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #f26a4a, #e8453c);
+    border-radius: 10px;
+  }
+   
+  .ux-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+   
+  .ux-row span { height: 44px; background: #fde9e7; border-radius: 8px; }
+  .ux-line { height: 6px; margin-bottom: 8px; background: #e3e6eb; border-radius: 3px; }
+  .ux-line--short { width: 60%; }
+   
+  .ux-palette {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: flex;
+    gap: 5px;
+    padding: 8px 10px;
+    background: #fff;
+    border-radius: 999px;
+    box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.3);
+  }
+   
+  .ux-palette i { width: 14px; height: 14px; border-radius: 50%; }
+  .ux-palette i:nth-child(1) { background: #e8453c; }
+  .ux-palette i:nth-child(2) { background: #f5a623; }
+  .ux-palette i:nth-child(3) { background: #2f7dc1; }
+  .ux-palette i:nth-child(4) { background: #1f2a37; }
+   
+  /* Dashboard */
+  .dash { display: flex; gap: 10px; padding: 12px; height: 100%; }
+   
+  .dash__side {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 22%;
+  }
+   
+  .dash__side span { height: 10px; background: #dbe7f5; border-radius: 5px; }
+  .dash__side span:first-child { background: var(--sc-blue); }
+   
+  .dash__main { flex: 1; }
+   
+  .dash__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+   
+  .dash__stats span { height: 34px; background: #e8f1fb; border-radius: 8px; }
+   
+  .dash__chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 90px;
+  }
+   
+  .dash__chart i { flex: 1; background: #9ec5ea; border-radius: 4px 4px 0 0; }
+  .dash__chart i:nth-child(1) { height: 40%; }
+  .dash__chart i:nth-child(2) { height: 65%; }
+  .dash__chart i:nth-child(3) { height: 50%; }
+  .dash__chart i:nth-child(4) { height: 85%; background: var(--sc-blue); }
+  .dash__chart i:nth-child(5) { height: 60%; }
+  .dash__chart i:nth-child(6) { height: 95%; }
+   
+  /* =========================================================
+     Responsive
+     ========================================================= */
+   
+  /* Responsive: Tablet وأصغر (≤ 991.98px) — الكروت فوق والكارت الكبير تحتها */
+  @media (max-width: 991.98px) {
+    .showcase { padding-block: 32px; }
+   
+    .showcase__tabs { height: auto; }
+    .showcase__tab { flex: none; }
+    .showcase__tab.is-active { transform: none; }
+   
+    .showcase__panel { min-height: 0; padding: 28px; }
+    .showcase__visual { min-height: 280px; }
+  }
+   
+  /* Responsive: Mobile كبير (≤ 767.98px) — النص فوق والـ mockup تحته */
+  @media (max-width: 767.98px) {
+    .showcase__title { font-size: 1.35rem; }
+    .showcase__content { gap: 16px; margin-bottom: 8px; }
+    .showcase__visual { min-height: 240px; }
+   
+    .phone--back  { left: 4%; }
+    .phone--front { left: 34%; }
+    .win { left: 6%; width: 88%; }
+  }
+   
+  /* Responsive: Mobile صغير (≤ 575.98px) */
+  @media (max-width: 575.98px) {
+    .showcase__tab { padding: 14px; }
+    .showcase__icon { width: 40px; height: 40px; }
+   
+    .showcase__panel { padding: 22px 18px 0; }
+    .showcase__title { font-size: 1.2rem; }
+    .showcase__text { font-size: 0.85rem; line-height: 1.9; }
+    .showcase__visual { min-height: 210px; }
+   
+    .phone--back  { width: 110px; height: 210px; left: 2%; bottom: -60px; }
+    .phone--front { width: 128px; height: 240px; left: 32%; bottom: -80px; }
+    .win { height: 200px; }
+  }
+   
+  /* احترام إعداد تقليل الحركة عند المستخدم */
+  @media (prefers-reduced-motion: reduce) {
+    .showcase__tab,
+    .showcase__panel {
+      transition: none;
+    }
+  }

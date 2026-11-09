@@ -153,11 +153,21 @@ p{
     margin: 0;
 }
 
+/* ============ الزرار الأساسي ============ */
 .main-btn {
-    
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+
     padding: 10px 24px;
-    background: linear-gradient(135deg, #e53a3e 0%, #ef5739 100%);
-    border-radius: 24px ;
+    /* أول نص الجرادينت هو نفس لونك الأصلي، والباقي بيظهر وقت الـ hover */
+    background: linear-gradient(135deg, #e53a3e 0%, #ef5739 50%, #ff7a3d 100%);
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+    border-radius: 24px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -167,9 +177,35 @@ p{
     font-size: 20px;
     font-weight: 700;
     word-wrap: break-word;
+
+    box-shadow: 0 4px 12px -4px rgba(229, 58, 62, 0.45);
+    transition:
+        transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.35s ease,
+        background-position 0.6s ease;
 }
 
+/* النور اللي بيتبع الماوس */
+.main-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle 90px at var(--x, 50%) var(--y, 50%),
+                rgba(255, 255, 255, 0.5),
+                transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* ============ الزرار الثانوي ============ */
 .sec-btn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+
     padding: 10px 24px;
     background: var(--white-color);
     border-radius: 24px;
@@ -177,8 +213,79 @@ p{
     color: var(--main-color);
     font-size: 20px;
     font-weight: 700;
+
+    transition:
+        color 0.35s ease,
+        transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.35s ease;
 }
 
+/* الدايرة اللي بتتوسع من مكان دخول الماوس */
+.sec-btn::before {
+    content: "";
+    position: absolute;
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    z-index: -1;
+    width: 300%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--main-color);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ============ الـ hover (على الأجهزة اللي بتدعمه بس) ============ */
+@media (hover: hover) {
+    .main-btn:hover {
+        transform: translateY(-4px) scale(1.03);
+        background-position: 100% 50%;
+        box-shadow:
+            0 14px 28px -8px rgba(229, 58, 62, 0.65),
+            0 0 0 4px rgba(229, 58, 62, 0.15);
+    }
+
+    .main-btn:hover::before {
+        opacity: 1;
+    }
+
+    .sec-btn:hover {
+        color: var(--white-color);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px -10px color-mix(in srgb, var(--main-color) 70%, transparent);
+    }
+
+    .sec-btn:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* ============ الضغط والكيبورد ============ */
+.main-btn:active,
+.sec-btn:active {
+    transform: translateY(-1px) scale(0.97);
+}
+
+.main-btn:focus-visible,
+.sec-btn:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--main-color) 45%, transparent);
+    outline-offset: 3px;
+}
+
+/* احترام إعداد تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+    .main-btn,
+    .main-btn::before,
+    .sec-btn,
+    .sec-btn::before {
+        transition: none;
+    }
+
+    .main-btn:hover,
+    .sec-btn:hover {
+        transform: none;
+    }
+}
 
 .sec-sub {
     margin-top: 24px;

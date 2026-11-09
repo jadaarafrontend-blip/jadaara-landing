@@ -446,3 +446,151 @@ if (chart) {
         chart.classList.add('in-view');
     }
 }
+
+
+
+
+
+
+
+
+
+(function () {
+    const section = document.getElementById('services-showcase');
+    if (!section) return;
+  
+    const tabs = Array.from(section.querySelectorAll('.showcase__tab'));
+    const panels = Array.from(section.querySelectorAll('.showcase__panel'));
+  
+    function activate(tab, moveFocus) {
+      const targetId = tab.dataset.target;
+  
+      tabs.forEach(function (t) {
+        const isActive = t === tab;
+        t.classList.toggle('is-active', isActive);
+        t.setAttribute('aria-selected', isActive);
+        t.tabIndex = isActive ? 0 : -1;
+      });
+  
+      panels.forEach(function (p) {
+        p.classList.toggle('is-active', p.id === targetId);
+      });
+  
+      if (moveFocus) tab.focus();
+    }
+  
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () {
+        activate(tab, false);
+      });
+  
+      // تنقل بالكيبورد: الأسهم + Home/End
+      tab.addEventListener('keydown', function (e) {
+        let next = null;
+  
+        if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') next = tabs[(index + 1) % tabs.length];
+        if (e.key === 'ArrowUp' || e.key === 'ArrowRight') next = tabs[(index - 1 + tabs.length) % tabs.length];
+        if (e.key === 'Home') next = tabs[0];
+        if (e.key === 'End') next = tabs[tabs.length - 1];
+  
+        if (next) {
+          e.preventDefault();
+          activate(next, true);
+        }
+      });
+    });
+  })();
+
+
+
+  (function () {
+    const selector = '.main-btn, .sec-btn';
+  
+    function setPos(e) {
+      const btn = e.target.closest(selector);
+      if (!btn) return;
+      const r = btn.getBoundingClientRect();
+      btn.style.setProperty('--x', (e.clientX - r.left) + 'px');
+      btn.style.setProperty('--y', (e.clientY - r.top) + 'px');
+    }
+  
+    // event delegation: بيشتغل كمان على أي زرار بتضيفه بالـ JS بعد تحميل الصفحة
+    document.addEventListener('pointerover', setPos);
+    document.addEventListener('pointermove', setPos);
+    document.addEventListener('pointerout', setPos);
+  })();
+
+
+
+
+
+
+
+
+  
+
+  (function () {
+    const toggle = document.querySelector('.show-menu');
+    const menu = document.getElementById('header-menu');
+    if (!toggle || !menu) return;
+  
+    const desktopQuery = window.matchMedia('(min-width: 992px)');
+  
+    function setOpen(open, returnFocus) {
+      menu.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
+      if (!open && returnFocus) toggle.focus();
+    }
+  
+    toggle.addEventListener('click', function () {
+      setOpen(!menu.classList.contains('is-open'), false);
+    });
+  
+    // قفل القائمة لما تضغط على أي رابط
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false, false);
+    });
+  
+    // قفل لما تضغط برا القائمة
+    document.addEventListener('click', function (e) {
+      if (!menu.classList.contains('is-open')) return;
+      if (menu.contains(e.target) || toggle.contains(e.target)) return;
+      setOpen(false, false);
+    });
+  
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) setOpen(false, true);
+    });
+  
+    // لو الشاشة كبرت والقائمة مفتوحة
+    desktopQuery.addEventListener('change', function (e) {
+      if (e.matches) setOpen(false, false);
+    });
+  })();
+
+
+  (function () {
+    const nav = document.querySelector('.header-nav');
+    if (!nav) return;
+  
+    function onScroll() {
+      nav.classList.toggle('is-scrolled', window.scrollY > 20);
+    }
+  
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // لو الصفحة اتفتحت وهي مسكرولة (refresh)
+  })();
+
+
+
+
+  (function () {
+    const marquee = document.querySelector('.hero-content-footer');
+    const group = marquee && marquee.querySelector('.footer-marquee-group');
+    if (!group) return;
+  
+    const clone = group.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true'); // عشان قارئ الشاشة ميقراش الكلمات مرتين
+    marquee.appendChild(clone);
+  })();
