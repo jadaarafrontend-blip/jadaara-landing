@@ -1145,6 +1145,181 @@
     opacity: 1
 }
 
+/* ===== CTA ===== */
+.cta-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 330px;
+    padding: 20px 48px;
+    border-radius: 32px;
+    color: var(--white-color);
+    background:
+        radial-gradient(ellipse 34% 80% at 26% 36%, rgba(255, 168, 150, .5), transparent 70%),
+        linear-gradient(200deg, var(--main-color) 35%, #C93A2F 150%)
+}
+
+/* faint dotted arc, lower-right (same idea as .faq-deco) */
+.cta-card::after {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    right: -110px;
+    bottom: -250px;
+    border-radius: 50%;
+    border: 2px dotted rgba(255, 255, 255, .22);
+    pointer-events: none
+}
+
+.cta-deco {
+    position: absolute;
+    top: 10%;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    pointer-events: none
+}
+
+.cta-tile {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, .45);
+    background: rgba(255, 255, 255, .12);
+    color: var(--white-color);
+    animation: cta-float 6s ease-in-out infinite
+}
+
+.cta-tile--code1 { left: 145px; top: 33px; animation-duration: 6s }
+.cta-tile--code2 { left: 267px; top: 85px; animation-duration: 7s; animation-delay: -2s }
+.cta-tile--heart { left: 40px; top: 100px; animation-duration: 5.5s; animation-delay: -1s }
+.cta-tile--mobile { left: 177px; top: 150px; animation-duration: 6.5s; animation-delay: -3s }
+.cta-tile--chart { left: 84px; top: 167px; width: 36px; height: 36px; animation-duration: 7.5s; animation-delay: -4s }
+
+.cta-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--white-color)
+}
+
+.cta-dot--1 { left: 9px; top: 52px }
+.cta-dot--2 { left: 248px; top: 26px }
+.cta-dot--3 { left: 23px; top: 169px }
+.cta-dot--4 { left: 378px; top: 169px }
+
+.cta-ring {
+    position: absolute;
+    left: 312px;
+    top: 47px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid var(--white-color)
+}
+
+@keyframes cta-float {
+    0%, 100% { transform: translateY(0) }
+    50% { transform: translateY(-6px) }
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+}
+
+.cta-badge {
+    display: inline-flex;
+    padding: 3px 12px;
+    border-radius: 99px;
+    border: 1px solid rgba(255, 255, 255, .45);
+    background: rgba(255, 255, 255, .15);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6
+}
+
+.cta-title {
+    margin: 10px 0 2px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white-color)
+}
+
+.cta-sub {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: .9
+}
+
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 36px;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease
+}
+
+.cta-btn--primary {
+    min-width: 163px;
+    background: var(--white-color);
+    color: var(--main-color)
+}
+
+.cta-btn--primary:hover {
+    color: var(--main-color);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .14)
+}
+
+.cta-btn--ghost {
+    min-width: 131px;
+    border: 1.5px solid var(--white-color);
+    color: var(--white-color)
+}
+
+.cta-btn--ghost:hover {
+    color: var(--white-color);
+    background: rgba(255, 255, 255, .15)
+}
+
+.cta-btn:focus-visible {
+    outline: 2px solid var(--white-color);
+    outline-offset: 3px
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cta-tile {
+        animation: none
+    }
+
+    .cta-btn--primary:hover {
+        transform: none
+    }
+}
+
 /* ===== FAQ ===== */
 .faq-section {
     position: relative;

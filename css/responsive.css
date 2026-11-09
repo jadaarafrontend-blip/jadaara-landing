@@ -269,9 +269,88 @@
     * {
         transition: none !important
     }
-
-        .header-nav {
-            transition: none;
-        }
-
+    .header-nav {
+        transition: none;
     }
+}
+
+/* ===== CTA ===== */
+@media (max-width:1100px) {
+    .cta-card {
+        padding: 20px 36px
+    }
+
+    /* drop the inner-most decorations so they stay clear of the text */
+    .cta-tile--code2,
+    .cta-ring,
+    .cta-dot--4 {
+        display: none
+    }
+}
+
+@media (max-width:768px) {
+    .cta-card {
+        min-height: 0;
+        padding: 32px 20px;
+        border-radius: 24px;
+        justify-content: center;
+        text-align: center
+    }
+
+    .cta-content {
+        width: 100%;
+        align-items: center
+    }
+
+    .cta-title {
+        font-size: 28px
+    }
+
+    .cta-sub {
+        font-size: 14px
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        width: 100%
+    }
+
+    .cta-btn {
+        width: 100%
+    }
+
+    /* keep only two small faded tiles in the top corners */
+    .cta-deco {
+        width: auto;
+        right: 0;
+        opacity: .55
+    }
+
+    .cta-dot,
+    .cta-tile--mobile,
+    .cta-tile--chart {
+        display: none
+    }
+
+    .cta-tile {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px
+    }
+
+    .cta-tile svg {
+        width: 14px;
+        height: 14px
+    }
+
+    .cta-tile--code1 {
+        left: 14px;
+        top: 14px
+    }
+
+    .cta-tile--heart {
+        left: auto;
+        right: 14px;
+        top: 14px
+    }
+}
