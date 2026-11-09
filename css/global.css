@@ -1,23 +1,54 @@
-@font-face {
-    font-family: "font_regular";
-    src: url("../fonts/Cairo-Regular.ttf");
-}
 
-@font-face {
-    font-family: "font_bold";
-    src: url("../fonts/Cairo-Bold.ttf");
-}
+
+
+@font-face{
+    font-family:"Cairo";
+    src:url("../fonts/Cairo-Regular.ttf") format("truetype");
+    font-weight:400;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:"Cairo";
+    src:url("../fonts/Cairo-Bold.ttf") format("truetype");
+    font-weight:700;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:"Cairo";
+    src:url("../fonts/Cairo-Medium.ttf") format("truetype");
+    font-weight:500;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:"Cairo";
+    src:url("../fonts/Cairo-SemiBold.ttf") format("truetype");
+    font-weight:600;
+    font-display:swap;
+  }
 
 :root {
-    --main-color: #E5483C;
-    --second-color: #F26A3D;
-    --bg-color: #FDF0EE;
+    --main-color: #e5483c;
+    --second-color:#f3c9c4 ;
+    --bg-color: #fdf0ee;
     --white-color: #fff;
     --black-color: #000;
-    --blue-color: #00B2F8;
-    --text-color: #2B2F3A;
+    --text-color: #2b2f3a;
     --second-text-color: #555555;
+    --border: #ECE7E6;
+    --border-2: #F0EDEC;
+    --gray: #777;
+    --muted: #8A8A8A;
 }
+
+
+
+body {
+    font-family: "Cairo", system-ui, sans-serif;
+    color: var(--text-color);
+    background: #fff;
+    -webkit-font-smoothing: antialiased
+}
+
 
 
 ::selection {
@@ -25,11 +56,6 @@
     color: var(--white-color);
 }
 
-body {
-    font-family: "font_regular", sans-serif;
-    color: var(--text-color);
-    direction: rtl;
-}
 
 * {
     padding: 0;
@@ -42,6 +68,11 @@ body {
 
 *:focus {
     outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
 }
 
 a {
@@ -64,6 +95,8 @@ button {
     border: none;
 }
 
+
+
 *:focus {
     outline: none;
 }
@@ -74,7 +107,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "font_bold";
+    font-family:"Cairo";
+    font-weight: bold;
 }
 img {
     width: 100%;
@@ -93,6 +127,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 40px;
 }
 .title-head h2 {
     font-size: clamp(30px, 3vw, 46px);
@@ -103,3 +138,66 @@ img {
     color: var(--second-text-color);
 }
 
+
+
+.sec-title {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--main-color)
+}
+
+
+p{
+    margin: 0;
+}
+
+.main-btn {
+    
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #e53a3e 0%, #ef5739 100%);
+    border-radius: 24px ;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.sec-btn {
+    padding: 10px 24px;
+    background: var(--white-color);
+    border-radius: 24px;
+    border: 1px var(--main-color) solid;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.sec-sub {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 16px;
+    color: #4A4A4A
+}
+
+/* ===== Global scrollbar ===== */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--bg-color)}
+::-webkit-scrollbar-thumb{
+  background:var(--main-color);
+  border-radius:99px;
+  border:2px solid var(--bg-color);
+}
+::-webkit-scrollbar-thumb:hover{background:#C93A2F}
+::-webkit-scrollbar-corner{background:var(--bg-color)}
+
+@supports not selector(::-webkit-scrollbar){
+  html{scrollbar-color:var(--main-color) var(--bg-color);scrollbar-width:thin}
+}
